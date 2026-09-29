@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  /* Évite que le contenu dépasse à droite */
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  /* GRAND TITRE ACCUEIL */
+  h1.text-headline-lg {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  /* TEXTE ACCUEIL */
+  p.text-body-xl {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* TITRES DES SECTIONS */
+  h2.text-headline-lg,
+  h2.text-4xl {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* TITRES MOYENS */
+  h3.text-headline-md {
+    font-size: 26px !important;
+    line-height: 1.2 !important;
+  }
+
+  /* TITRES DES PROJETS */
+  h4.text-headline-sm,
+  h4.text-headline-md {
+    font-size: 19px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* PETITS TEXTES DES PROJETS */
+  .font-code-tag {
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* DESCRIPTION DES PROJETS */
+  p.text-body-sm {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* CONTACT */
+  #contact h2 {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+
+  #contact p {
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* EMAIL / LOCALISATION */
+  #contact .text-body-md {
+    font-size: 15px !important;
+  }
+
+  /* RÉSEAUX SOCIAUX */
+  #contact .flex.items-center.gap-3 {
+    flex-wrap: wrap !important;
+  }
+
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-error-container": "#ffdad6",
+          "on-tertiary-container": "#400071",
+          "error-container": "#93000a",
+          "surface-container-lowest": "#0d0e16",
+          "primary": "#d0bcff",
+          "primary-fixed-dim": "#d0bcff",
+          "tertiary-fixed-dim": "#ddb7ff",
+          "inverse-on-surface": "#2f303a",
+          "outline-variant": "#494454",
+          "on-background": "#e3e1ee",
+          "secondary-fixed-dim": "#fdaaff",
+          "surface-container-highest": "#33343e",
+          "secondary": "#fdaaff",
+          "surface-container-low": "#1a1b24",
+          "surface-container": "#1e1f28",
+          "on-tertiary-fixed-variant": "#6900b3",
+          "on-surface-variant": "#cbc3d7",
+          "surface-container-high": "#282933",
+          "on-secondary-container": "#ffeafa",
+          "surface-variant": "#33343e",
+          "surface": "#12131c",
+          "outline": "#958ea0",
+          "primary-container": "#a078ff",
+          "on-primary-fixed-variant": "#5516be",
+          "on-secondary": "#580064",
+          "error": "#ffb4ab",
+          "surface-tint": "#d0bcff",
+          "on-error": "#690005",
+          "on-secondary-fixed": "#36003e",
+          "surface-bright": "#383843",
+          "inverse-surface": "#e3e1ee",
+          "on-secondary-fixed-variant": "#7d008c",
+          "on-primary-container": "#340080",
+          "secondary-container": "#bb00d2",
+          "background": "#12131c",
+          "tertiary-fixed": "#f0dbff",
+          "on-primary-fixed": "#23005c",
+          "on-primary": "#3c0091",
+          "secondary-fixed": "#ffd6fc",
+          "primary-fixed": "#e9ddff",
+          "surface-dim": "#12131c",
+          "tertiary": "#ddb7ff",
+          "on-tertiary-fixed": "#2c0051",
+          "on-tertiary": "#490080",
+          "tertiary-container": "#b76dff",
+          "on-surface": "#e3e1ee",
+          "inverse-primary": "#6d3bd7"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-lg": "1.5rem",
+          "margin-mobile": "1.25rem",
+          "gutter-mobile": "1rem",
+          "gutter": "1.5rem",
+          "space-xl": "2.5rem",
+          "margin": "4rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "margin-tablet": "2rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Syne"
+          ],
+          "body-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "code-tag": [
+            "Plus Jakarta Sans"
+          ],
+          "display-hero": [
+            "Syne"
+          ],
+          "headline-md": [
+            "Syne"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "display-hero-mobile": [
+            "Syne"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Syne"
+          ],
+          "headline-sm": [
+            "Syne"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-xl": [
+            "18px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "400"
+            }
+          ],
+          "code-tag": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero": [
+            "64px",
+            {
+              "lineHeight": "72px",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-md": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "600"
+            }
+          ],
+          "display-hero-mobile": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "800"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "44px",
+            {
+              "lineHeight": "52px",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      },
+    },
+  }
+</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container" style="overflow-x:hidden;"><header class="fixed top-0 left-0 w-full z-[9999] pointer-events-none"><div class="h-20 w-full px-6 md:px-8 lg:px-24 flex items-center justify-between pointer-events-auto"><div class="flex items-center gap-space-md"><a class="font-headline-sm text-headline-sm uppercase font-bold tracking-tight text-primary hover:text-primary-fixed transition-colors" href="#">SAMIRA NEKI</a></div><div class="flex items-center gap-space-lg"><nav class="hidden md:flex items-center gap-space-md bg-surface-container-low/80 backdrop-blur-xl px-space-md py-space-xs rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface hover:text-primary transition-colors py-1 px-space-xs" href="#a-propos">About</a><span class="text-outline/30">•</span><a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors py-1 px-space-xs" href="#expertises">Expertise</a><span class="text-outline/30">•</span><a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors py-1 px-space-xs" href="#realisations">Projects</a><span class="text-outline/30">•</span><a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface-variant hover:text-tertiary transition-colors py-1 px-space-xs" href="#contact">Contact</a></nav><a class="flex items-center gap-space-sm bg-surface-container-low/80 backdrop-blur-xl p-space-xs rounded-full shadow-[0_1px_8px_rgba(0,0,0,0.4)] hover:bg-surface-container transition-all group" href="#contact"><span class="hidden sm:inline-block font-label-md text-label-md px-space-sm text-secondary group-hover:text-secondary-fixed transition-colors">Let's talk</span></a></div></div></header><main class="w-full pt-20 bg-background relative overflow-hidden"><div class="flex flex-col w-full text-on-surface">
+<!-- AMBIENT GLOW BACKDROPS -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<div class="absolute top-96 right-10 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+<!-- 1. AVANT-GARDE HERO SECTION -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin pt-12 pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text Left -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="bg-surface-container-high px-space-md py-space-xs rounded-full font-code-tag uppercase tracking-wider text-body-md font-bold text-secondary">
+  UI/UX Design • Graphic Design • QA
+</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg uppercase tracking-tight text-on-surface leading-[1.15]">TURNING <span class="text-primary">IDEAS</span> INTO DIGITAL <span class="text-secondary">EXPERIENCES.</span></h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant max-w-2xl leading-relaxed">I design modern, intuitive digital experiences bridging UI/UX Design, graphic design, and QA testing, with sharp attention to detail, simplicity, and user experience quality.</p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
+<a class="px-space-xl py-space-md rounded-xl bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-bold shadow-xl hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center gap-space-xs" href="#realisations">
+<span class="">Explore Projects</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="px-space-xl py-space-md rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-surface-container-highest transition-all flex items-center gap-space-xs" href="#contact">
+<span class="">Work Together</span>
+</a>
+</div>
+</div>
+<!-- Visual Right (Portrait studio Samira Neki) -->
+<div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+<div class="relative w-full max-w-[440px] aspect-[3/4] rounded-2xl p-space-xs bg-surface-container shadow-2xl flex flex-col justify-between overflow-hidden group">
+<div class="relative w-full h-full rounded-xl overflow-hidden bg-surface-container-lowest">
+<img alt="Samira Neki - UI/UX Designer &amp; QA" class="w-full h-full object-cover object-top group-hover:scale-105 transition-all duration-700 ease-out rounded-xl" src="images/ui-ux/photo.png">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-85 pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between bg-surface-container-low/90 backdrop-blur-xl p-space-md rounded-xl shadow-xl">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-tight">Samira NEKI</span>
+<span class="font-code-tag text-code-tag text-outline">UI/UX Design • Graphic Design • QA</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-highest px-space-sm py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-tag text-code-tag text-secondary font-semibold uppercase">Full-time / Freelance</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. SECTION ABOUT & EXPERTISE -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin py-20 border-t border-outline-variant/30" id="a-propos">
+<div class="flex flex-col gap-20">
+<!-- Presentation 2 columns -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+<!-- Left Column -->
+<div class="lg:col-span-5 flex flex-col items-start text-left gap-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-bold">ABOUT</span>
+</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl uppercase tracking-tight text-on-surface leading-[1.15]">
+      DESIGNER, CREATIVE<br/>
+<span class="text-primary">&amp; QUALITY-DRIVEN</span>
+</h2>
+</div>
+<!-- Right Column -->
+<div class="lg:col-span-7 flex flex-col items-start text-left gap-6">
+<div class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-primary/30 bg-primary/10 hover:border-primary/50 text-primary font-headline-sm text-[16px] md:text-[18px] tracking-wider uppercase backdrop-blur-md transition-all duration-300 shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+<span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span>
+<span class="">I DESIGN. I CREATE. I TEST.</span>
+</div>
+<div class="flex flex-col gap-4 text-on-surface-variant font-body-xl text-[16px] md:text-body-xl leading-relaxed">
+<p class="">I design clean, intuitive, and aesthetic digital experiences combining UI/UX Design, Graphic Design, and QA Testing.</p>
+<p class="">My QA background empowers me to pay meticulous attention to details, ergonomics, interface consistency, and product reliability.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3 md:gap-6 pt-2 text-code-tag uppercase tracking-widest font-bold text-on-surface">
+<span class="text-primary">UI/UX DESIGN</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-secondary">GRAPHIC DESIGN</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="text-tertiary">QA TESTING</span>
+</div>
+</div>
+</div>
+<!-- CORE EXPERTISE -->
+<div class="flex flex-col gap-8 pt-8 border-t border-outline-variant/30" id="expertises">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-code-tag text-code-tag text-primary uppercase tracking-widest font-bold">CORE EXPERTISE</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">MY EXPERTISE</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- 01 UI/UX DESIGN -->
+<div class="p-6 md:p-8 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-primary/50 transition-all group">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-code-tag text-code-tag uppercase font-bold text-primary tracking-widest px-2.5 py-1 rounded-full bg-primary/10 w-fit">01 — EXPERTISE</span>
+<span class="material-symbols-outlined text-[20px] text-primary">layers</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold group-hover:text-primary transition-colors">UI/UX DESIGN</h4>
+<p class="font-label-md text-label-md text-primary font-semibold">Designing user-centered, thoughtful interfaces</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">I transform user requirements and bold ideas into clean, intuitive digital interfaces, from user research and wireframing all the way to high-fidelity mockups and interactive prototypes.</p>
+<div class="pt-2">
+<span class="font-code-tag text-code-tag uppercase tracking-wider text-outline block mb-2 font-bold">Key Competencies</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">User Flows</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Wireframing</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">UI Design</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Prototyping</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Responsive Design</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Design Systems</span>
+</div>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center justify-between text-outline">
+<span class="font-code-tag text-code-tag uppercase text-primary font-semibold">→ Clarity · Functionality · User Experience</span>
+</div>
+</div>
+<!-- 02 GRAPHIC DESIGN -->
+<div class="p-6 md:p-8 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-secondary/50 transition-all group">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-code-tag text-code-tag uppercase font-bold text-secondary tracking-widest px-2.5 py-1 rounded-full bg-secondary/10 w-fit">02 — EXPERTISE</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">palette</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold group-hover:text-secondary transition-colors">GRAPHIC DESIGN</h4>
+<p class="font-label-md text-label-md text-secondary font-semibold">Building consistent, high-impact visual identities</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">I design distinctive visual identities and branded assets that empower brands to stand out, spanning logotypes, corporate stationery, and full-scale marketing collateral.</p>
+<div class="pt-2">
+<span class="font-code-tag text-code-tag uppercase tracking-wider text-outline block mb-2 font-bold">Key Competencies</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Visual Identity</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Logo Design</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Typography</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Layout Composition</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Marketing Collateral</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Vector &amp; Print</span>
+</div>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center justify-between text-outline">
+<span class="font-code-tag text-code-tag uppercase text-secondary font-semibold">→ Creativity · Coherence · Brand Identity</span>
+</div>
+</div>
+<!-- 03 QA TESTING -->
+<div class="p-6 md:p-8 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-tertiary/50 transition-all group">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-code-tag text-code-tag uppercase font-bold text-tertiary tracking-widest px-2.5 py-1 rounded-full bg-tertiary/10 w-fit">03 — EXPERTISE</span>
+<span class="material-symbols-outlined text-[20px] text-tertiary">verified</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold group-hover:text-tertiary transition-colors">QA TESTING</h4>
+<p class="font-label-md text-label-md text-tertiary font-semibold">Testing, verifying, and refining software quality</p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">I rigorously hunt down defects across desktop, web platforms, and mobile apps, securing comprehensive end-to-end validation across Frontend (UX, responsiveness, user journeys) and Backend (REST APIs, databases, business rules, and stability).</p>
+<div class="pt-2">
+<span class="font-code-tag text-code-tag uppercase tracking-wider text-outline block mb-2 font-bold">Key Competencies</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Functional Testing</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">UI Tests</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Responsive Audits</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Bug Hunting &amp; Triage</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Interface Validation</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-code-tag text-code-tag border border-outline-variant/20">Anomaly Tracking</span>
+</div>
+</div>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/20 flex items-center justify-between text-outline">
+<span class="font-code-tag text-code-tag uppercase text-tertiary font-semibold">→ Precision · Reliability · Quality Assurance</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TOOLS SECTION -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-6 md:p-8 rounded-2xl bg-surface-container-low/70 border border-outline-variant/30">
+<div class="flex flex-col gap-1">
+<span class="font-code-tag text-code-tag uppercase tracking-widest text-outline font-bold">CORE TOOLKIT &amp; SOFTWARE</span>
+<h4 class="font-headline-sm text-headline-sm uppercase text-on-surface font-bold">FAVORITE TOOLS</h4>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 hover:border-primary/50 transition-colors">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Figma</span>
+</div>
+<div class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 hover:border-secondary/50 transition-colors">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Adobe Illustrator</span>
+</div>
+<div class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 hover:border-tertiary/50 transition-colors">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Canva</span>
+</div>
+<div class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container border border-outline-variant/40 hover:border-secondary/50 transition-colors">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Adobe Photoshop</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SELECTED CASE STUDIES -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin py-24" id="realisations">
+<div class="flex flex-col gap-space-xl">
+<!-- Section Title Bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-outline-variant/30 pb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-bold">Full Format Showcase • 3 Core Pillars</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Selected Work</h2>
+</div>
+<div class="flex flex-col items-start md:items-end gap-1">
+<div class="flex items-center gap-2 text-primary font-code-tag text-code-tag">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-24">
+<!-- PILLAR 01 : UI/UX DESIGN HEROIC SLIDESHOW (GoFOOD, Zéllo & Real Estate Platform) -->
+<div class="flex flex-col gap-space-md" id="carousel-pole-uiux">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-primary/20 text-primary font-code-tag uppercase font-bold tracking-wider">01</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-tight">UI/UX DESIGN</h3>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5" id="dots-uiux"><button aria-label="Slide 1" class="h-2.5 rounded-full transition-all duration-300 bg-primary w-8" onclick="goToSlide('uiux', 0)"></button><button aria-label="Slide 2" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('uiux', 1)"></button><button aria-label="Slide 3" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('uiux', 2)"></button></div>
+<span class="font-code-tag text-code-tag text-primary font-mono font-bold px-space-sm py-1 rounded-full bg-surface-container-high border border-outline-variant/30" id="counter-uiux">01 / 03</span>
+</div>
+</div>
+<div class="relative w-full h-[520px] md:h-[620px] rounded-3xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-2xl group" data-slides-count="3" id="container-uiux">
+<!-- Slide 1: GoFOOD Mobile UI/UX -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-100 scale-100 pointer-events-auto z-10" data-slide-index="0">
+<img alt="GoFOOD - Food Delivery &amp; Ordering Mobile App" class="w-full h-full object-cover object-center rounded-2xl" src="images/ui-ux/gofood.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-primary uppercase font-bold border border-primary/20">MOBILE APPLICATION • FOOD DELIVERY &amp; E-COMMERCE</span>
+</div>
+<div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none">
+<span class="font-code-tag text-code-tag text-primary uppercase tracking-widest font-semibold">MOBILE APPLICATION • FOOD DELIVERY &amp; E-COMMERCE</span>
+<h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">GoFOOD — FOOD DELIVERY &amp; ORDERING MOBILE APP</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Comprehensive UI/UX design of an iOS &amp; Android food delivery app: gourmet discovery flow, interactive cart, and real-time tracking from kitchen to doorstep.</p>
+</div>
+</div>
+<!-- Slide 2: Zélio (commercial dashboard) -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-0 scale-95 pointer-events-none z-0" data-slide-index="1">
+<img alt="ZÉLIO — Commercial Management, Sales &amp; CRM Dashboard" class="w-full h-full object-cover object-center rounded-2xl" src="images/ui-ux/zelio.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-secondary uppercase font-bold border border-secondary/20">SAAS B2B • SALES ERP &amp; BUSINESS DASHBOARD</span>
+</div>
+<div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none">
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-semibold">UI/UX DESIGN • SALES PIPELINE, BILLING &amp; CRM</span>
+<h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">ZÉLIO — COMMERCIAL MANAGEMENT, SALES &amp; CRM DASHBOARD</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Design of a web &amp; desktop SaaS platform for commercial tracking, inventory, customer categorization, interactive regional mapping, and real-time revenue analytics.</p>
+</div>
+</div>
+<!-- Slide 3: Real Estate Platform -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-0 scale-95 pointer-events-none z-0" data-slide-index="2">
+<img alt="Real Estate Platform Desktop — Pricing &amp; Property Valuation" class="w-full h-full object-cover object-center rounded-2xl" src="images/ui-ux/platforme.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-primary uppercase font-bold border border-primary/20">SAAS B2B • REAL ESTATE PORTAL &amp; PRICING PLANS</span>
+</div>
+<div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none">
+<span class="font-code-tag text-code-tag text-primary uppercase tracking-widest font-semibold">UI/UX DESIGN • DEVELOPER PORTAL &amp; PRICING MATRIX</span>
+<h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">REAL ESTATE PLATFORM — PRICING &amp; PROPERTY VALUATION</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">UI/UX design of a real estate valuation and pricing showcase platform for developers and agencies: property showcase, unit modeling, and interactive subscription calculator.</p>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<button aria-label="Previous project" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-low/75 backdrop-blur-xl border border-outline-variant/40 text-on-surface hover:text-primary hover:bg-surface-container hover:scale-110 flex items-center justify-center transition-all shadow-xl z-20" onclick="slidePole('uiux', -1)"><span class="material-symbols-outlined text-[24px]">chevron_left</span></button>
+<button aria-label="Next project" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-low/75 backdrop-blur-xl border border-outline-variant/40 text-on-surface hover:text-primary hover:bg-surface-container hover:scale-110 flex items-center justify-center transition-all shadow-xl z-20" onclick="slidePole('uiux', 1)"><span class="material-symbols-outlined text-[24px]">chevron_right</span></button></div>
+</div>
+<!-- PILLAR 02 : GRAPHIC DESIGN HEROIC SLIDESHOW (El Dimachqi, Diamond Signature, NEXA, Tiwizi n Tlawin , Eligant Business Cards) -->
+<div class="flex flex-col gap-space-md" id="carousel-pole-graphic">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-secondary/20 text-secondary font-code-tag uppercase font-bold tracking-wider">02</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-tight">GRAPHIC DESIGN</h3>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5" id="dots-graphic"><button aria-label="Slide 1" class="h-2.5 rounded-full transition-all duration-300 bg-secondary w-8" onclick="goToSlide('graphic', 0)"></button><button aria-label="Slide 2" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('graphic', 1)"></button><button aria-label="Slide 3" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('graphic', 2)"></button><button aria-label="Slide 4" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('graphic', 3)"></button><button aria-label="Slide 5" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('graphic', 4)"></button></div>
+<span class="font-code-tag text-code-tag text-secondary font-mono font-bold px-space-sm py-1 rounded-full bg-surface-container-high border border-outline-variant/30" id="counter-graphic">01 / 05</span>
+</div>
+</div>
+<div class="relative w-full h-[600px] md:h-[620px] rounded-3xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-2xl group" id="container-graphic">
+<!-- Slide 1: Elegant Business Cards -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-0 scale-95 pointer-events-none z-0" data-slide-index="0"><img alt="Elegant Business Cards &amp; Stationery Collection" class="w-full h-full object-cover object-center" src="images/graphic-design/cartevisite.png"/><div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div><div class="absolute top-6 left-6 flex items-center gap-2"><span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-secondary uppercase font-bold border border-secondary/20">PRINT &amp; BRANDING • LUXURY BUSINESS CARDS &amp; STATIONERY</span></div><div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none"><span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-semibold">PRINT &amp; BRANDING • LUXURY BUSINESS CARDS &amp; STATIONERY</span><h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">ELEGANT BUSINESS CARDS &amp; STATIONERY COLLECTION</h4><p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Creation of sophisticated brand identities and print materials: luxury business cards for Dresse by Asma (gold foil &amp; matte black), My Beauty (deep burgundy &amp; textured linen), and HQ Handa Lashes (powder watercolor with hot-stamped gold foil).</p></div></div>
+<!-- Slide 2: El Dimachqi -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-100 scale-100 pointer-events-auto z-10" data-slide-index="1">
+<img alt="EL DIMACHQI — Restaurant Branding, Signage &amp; Packaging" class="w-full h-full object-cover object-center" src="images/graphic-design/eldimachq.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-secondary uppercase font-bold border border-secondary/20">CULINARY BRANDING • RESTAURANT SIGNAGE &amp; PACKAGING</span>
+</div>
+<div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none">
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-semibold">CULINARY BRANDING • RESTAURANT SIGNAGE &amp; PACKAGING</span>
+<h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">EL DIMACHQI — RESTAURANT BRANDING, SIGNAGE &amp; PACKAGING</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Full brand identity creation for a traditional Syrian culinary brand: calligraphic emblem, storefront signage, takeaway packaging suite, and editorial menu designs.</p>
+</div>
+</div>
+<!-- Slide 3: Diamond Signature -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-0 scale-95 pointer-events-none z-0" data-slide-index="2">
+<img alt="DIAMOND SIGNATURE — Luxury Brand Identity &amp; Editorial Design" class="w-full h-full object-cover object-center" src="images/graphic-design/signature.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-secondary uppercase font-bold border border-secondary/20">LUXURY BRANDING • EMBOSSED LOGO &amp; MARKETING SUITE</span>
+</div>
+<div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none">
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-semibold">LUXURY BRANDING • EMBOSSED LOGO &amp; MARKETING SUITE</span>
+<h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">DIAMOND SIGNATURE — LUXURY BRAND IDENTITY &amp; EDITORIAL DESIGN</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Design of high-end corporate stationery and editorial materials: gold-embossed cards, bespoke unboxing experience, and social media brand guidelines.</p>
+</div>
+</div>
+<!-- Slide 4: NEXA -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-0 scale-95 pointer-events-none z-0" data-slide-index="3">
+<img alt="NEXA Visual Identity &amp; Corporate Collateral" class="w-full h-full object-cover object-top" src="images/graphic-design/nexa.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-secondary uppercase font-bold border border-secondary/20">BRAND IDENTITY • REAL ESTATE PROMOTION &amp; PRINT MEDIA</span>
+</div>
+<div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none">
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-semibold">BRAND IDENTITY • REAL ESTATE PROMOTION &amp; PRINT MEDIA</span>
+<h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">NEXA — VISUAL IDENTITY &amp; CORPORATE COLLATERAL</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">3D architectural logotype development, cobalt brand guidelines, typography system, and marketing flyers for premier real estate programs.</p>
+</div>
+</div>
+<!-- Slide : Tiwizi n Tlawin -->
+<div class="absolute inset-0 transition-all duration-700 ease-out opacity-0 scale-95 pointer-events-none z-0" data-slide-index="4">
+<img alt="Tiwizi n Tlawin Tandlest — Cultural &amp; Solidarity Brand Identity" class="w-full h-full object-cover object-center" src="images/graphic-design/tiwizi_portfolio_sans_nexa.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent"></div>
+<div class="absolute top-6 left-6 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-code-tag text-code-tag text-secondary uppercase font-bold border border-secondary/20">CULTURAL BRANDING • EMBLEM &amp; EDITORIAL ROLLUP</span>
+</div>
+<div class="absolute bottom-8 left-6 md:left-10 right-28 flex flex-col gap-1 pointer-events-none">
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-semibold">CULTURAL BRANDING • EMBLEM &amp; EDITORIAL ROLLUP</span>
+<h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">TIWIZI N TLAWIN TANDLEST — CULTURAL &amp; SOLIDARITY BRAND IDENTITY</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Design of the cultural Berber emblem, visual guidelines, event banners, badges, and communication prints for women solidarity and community empowerment.</p>
+</div>
+</div>
+<button aria-label="Previous project" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-low/75 backdrop-blur-xl border border-outline-variant/40 text-on-surface hover:text-secondary hover:bg-surface-container hover:scale-110 flex items-center justify-center transition-all shadow-xl z-20" onclick="slidePole('graphic', -1)"><span class="material-symbols-outlined text-[24px]">chevron_left</span></button>
+<button aria-label="Next project" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-low/75 backdrop-blur-xl border border-outline-variant/40 text-on-surface hover:text-secondary hover:bg-surface-container hover:scale-110 flex items-center justify-center transition-all shadow-xl z-20" onclick="slidePole('graphic', 1)"><span class="material-symbols-outlined text-[24px]">chevron_right</span></button>
+</div>
+</div>
+<!-- PILLAR 03 : QA TESTING HEROIC SLIDESHOW -->
+<div class="flex flex-col gap-space-md" id="carousel-pole-qa">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-tertiary/20 text-tertiary font-code-tag uppercase font-bold tracking-wider">03</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface tracking-tight">QA TESTING</h3>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5" id="dots-qa"><button aria-label="Slide 1" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('qa', 0)"></button><button aria-label="Slide 2" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('qa', 1)"></button><button aria-label="Slide 3" class="w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline" onclick="goToSlide('qa', 2)"></button><button aria-label="Slide 4" class="h-2.5 rounded-full transition-all duration-300 bg-tertiary w-8" onclick="goToSlide('qa', 3)"></button></div>
+<span class="font-code-tag text-code-tag text-tertiary font-mono font-bold px-space-sm py-1 rounded-full bg-surface-container-high border border-outline-variant/30" id="counter-qa">04 / 04</span>
+</div>
+</div>
+<div class="relative w-full h-[520px] md:h-[620px] rounded-3xl overflow-hidden bg-surface-container-lowest border border-outline-variant/30 shadow-2xl group" id="container-qa">
+<!-- Slide 1: Software & Web Platform Tests -->
+<div class="absolute inset-0 transition-all duration-700 ease-out overflow-hidden opacity-0 scale-95 pointer-events-none z-0" data-slide-index="0"><img alt="QA Testing Suite - Real Estate Web &amp; Desktop Platform" class="w-full h-full object-cover object-top opacity-35" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD95SBD0OXSCFsbifJJ49z22y7WqG4K4_8Vp2ySJPAVqyV7V42NjrjIYKDm0n7ASoiV0C4JVXcPUe9m2P-UBrVzxJsgFzloRZrVSnPUr3QN0Q7ysedLbwHmS1rl9H950xEuoWAf7j6WS1suaigwk8hG_s7kKtfDPOBU4M5u5GwVyeQXN0bdqsVWoPnRaMjwPZyC7HHqAK854eA4ILJEtRb_iV9ETDWKqLyIUq66aLvAwwqPzw6DyUDnJdbJMcz3IYiwoQ"/><div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/50"></div><div class="absolute inset-0 p-6 md:p-12 flex flex-col justify-between z-10 font-mono"><div class="flex items-center justify-between text-code-tag border-b border-outline-variant/30 pb-4 backdrop-blur-md"><span class="text-tertiary font-bold flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span>SUITE #QA-CORE • REAL ESTATE DESKTOP &amp; WEB PLATFORM</span><div class="flex items-center gap-2"><span class="px-3 py-1 rounded-full bg-tertiary/20 text-tertiary border border-tertiary/30 font-bold uppercase">FRONTEND &amp; BACKEND E2E</span><span class="px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-code-tag hidden sm:inline-block border border-outline-variant/30">STATUS: PASS 100%</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto"><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-tertiary">fact_check</span>Functional Tests &amp; User Journeys</span><span class="text-tertiary text-code-tag font-bold">PASS</span></div><p class="text-outline text-body-sm font-body-md">Exhaustive testing of onboarding funnels, advanced listing filters, and pricing plan simulators in production environments.</p></div><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">verified_user</span>Forms, Tunnels &amp; Playwright / Cypress</span><span class="text-primary text-code-tag font-bold">0 CRITICAL BUGS</span></div><p class="text-outline text-body-sm font-body-md">Automated E2E suites, multi-browser verification across Chrome/Firefox/Safari, and complete UI accessibility audits.</p></div></div><div class="border-t border-outline-variant/30 pt-4 flex flex-col gap-1 pointer-events-none"><span class="font-code-tag text-code-tag text-tertiary uppercase tracking-widest font-semibold">QA TESTING • WEB &amp; CLOUD PLATFORMS</span><h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">WEB PLATFORMS &amp; SAAS FUNCTIONAL TESTING</h4><p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">E2E automated and manual testing benches: regression tests (0 regression post-deploy), API integrations, and edge-case validation.</p></div></div></div>
+<!-- Slide 2: Mobile Apps iOS & Android Tests -->
+<div class="absolute inset-0 transition-all duration-700 ease-out overflow-hidden opacity-0 scale-95 pointer-events-none z-0" data-slide-index="1"><img alt="QA Testing Suite - Mobile Application GoFOOD iOS &amp; Android" class="w-full h-full object-cover object-center opacity-35" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGA8UzXQ93arVFni2PoOZBZge-vvYCQNiMK430MWe7U1LrYef5WF_kIB5TMtjk7abHv2OXl1GXPli5VbvBv-6oOmcu0aAw7WQoAudIgiI07qlsllQDyfofVgagKHw77MciRvb1BDDotoCDkOD-KwaFr0tJtiissIYiVgHTN8A4cNA1Badt5YqQojd-tcfMP0dgan_0Y7HFN-lcMRk1kFqE35aQqXsTEsTDWG0Jyc9qy1RR_aKa9_bI0i6NX08EZ7EwvA"/><div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/50"></div><div class="absolute inset-0 p-6 md:p-12 flex flex-col justify-between z-10 font-mono"><div class="flex items-center justify-between text-code-tag border-b border-outline-variant/30 pb-4 backdrop-blur-md"><span class="text-secondary font-bold flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>HARNESS #MOBILE-APP • GOFOOD APP (IOS &amp; ANDROID)</span><div class="flex items-center gap-2"><span class="px-3 py-1 rounded-full bg-secondary/20 text-secondary border border-secondary/30 font-bold uppercase">MULTI-DEVICE CERTIFIED</span><span class="px-3 py-1 rounded-full bg-surface-container-highest text-primary text-code-tag hidden sm:inline-block border border-outline-variant/30">4 SCREENS VALIDATED</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto"><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-secondary">touch_app</span>Responsive &amp; Multi-Device Testing</span><span class="text-secondary text-code-tag font-bold">60 FPS</span></div><p class="text-outline text-body-sm font-body-md">Touch validation across iOS &amp; Android: fluid gesture interactions, screen transitions, and viewport adaptation (notches &amp; safe areas).</p></div><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-tertiary">shopping_cart_checkout</span>Checkout Funnel, Payments &amp; Offline Cache</span><span class="text-tertiary text-code-tag font-bold">SYNC VERIFIED</span></div><p class="text-outline text-body-sm font-body-md">Voucher code validation (GOFOOD40), dynamic delivery fee calculation, and robust cart state persistence across reconnects.</p></div></div><div class="border-t border-outline-variant/30 pt-4 flex flex-col gap-1 pointer-events-none"><span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest font-semibold">QA TESTING • MOBILE APPLICATIONS</span><h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">MOBILE APP TEST SUITES (IOS &amp; ANDROID)</h4><p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Full testing cycle on GoFOOD mobile app: multi-step checkout validation, network failure handling, gesture smoothness, 60fps animations, cross-device responsiveness.</p></div></div></div>
+<!-- Slide 3: Functional Validation Frontend & Backend -->
+<div class="absolute inset-0 transition-all duration-700 ease-out overflow-hidden opacity-0 scale-95 pointer-events-none z-0" data-slide-index="2"><img alt="QA Testing Suite - ERP Zéllo Sales &amp; CRM" class="w-full h-full object-cover object-top opacity-35" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtP6AzUfVPRFA4sBWKa9tImUoYumRUdt8PQDiA7VsX-r2KZu3Ttl2unLgVu-AHzGUTYy9Fh42E8uv_6dy3HAaAhJq-NvvQa_SenMG5ua8AV8akb3rGXwzBMD8F7AfslQNUqlEbP2ChQLUS1XkglRmRvWqPNQ4jr-EigIIZwT9VZRsvmm88KeyrCnPkZukIwWXZTBIpg_2PwJWqXfq1ua88KG6vLTwR6tGMcKWkbQRZ3hDm3dWGSVEpKcReAD7XURbsJA"/><div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/50"></div><div class="absolute inset-0 p-6 md:p-12 flex flex-col justify-between z-10 font-mono"><div class="flex items-center justify-between text-code-tag border-b border-outline-variant/30 pb-4 backdrop-blur-md"><span class="text-primary font-bold flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>STACK #FULL-CHAIN • ERP ZÉLLO (SALES, INVOICES &amp; CRM)</span><div class="flex items-center gap-2"><span class="px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 font-bold uppercase">END-TO-END VERIFIED</span><span class="px-3 py-1 rounded-full bg-surface-container-highest text-tertiary text-code-tag hidden sm:inline-block border border-outline-variant/30">DATA AGGREGATION PASS</span></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto"><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">api</span>REST API Testing &amp; Data Integrity</span><span class="text-primary text-code-tag font-bold">API 200 OK</span></div><p class="text-outline text-body-sm font-body-md">JSON payload validation, schema validation, revenue computation verification (186,540 DA), and real-time stock-to-invoice synchronization.</p></div><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-tertiary">speed</span>Frontend Performance &amp; Non-Regression</span><span class="text-tertiary text-code-tag font-bold">&lt;120MS</span></div><p class="text-outline text-body-sm font-body-md">Sub-120ms rendering speed on interactive regional map visualizations and real-time listing of 248 accounts with zero regression.</p></div></div><div class="border-t border-outline-variant/30 pt-4 flex flex-col gap-1 pointer-events-none"><span class="font-code-tag text-code-tag text-primary uppercase tracking-widest font-semibold">QA TESTING • END-TO-END VALIDATION (FRONTEND &amp; BACKEND)</span><h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">Functional Validation Frontend &amp; Backend</h4></div></div></div>
+<!-- Slide 4: Bug Tracking & Critical Issue Triage -->
+<div class="absolute inset-0 transition-all duration-700 ease-out overflow-hidden opacity-100 scale-100 pointer-events-auto z-10" data-slide-index="3"><img alt="Bug Tracking &amp; Issue Audit QA Command Center" class="w-full h-full object-cover object-top opacity-50" src="images/qa/Digital Markets Act.jpg"/><div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-background/30"></div><div class="absolute inset-0 p-6 md:p-12 flex flex-col justify-between z-10 font-mono"><div class="flex items-center justify-between text-code-tag border-b border-outline-variant/30 pb-4 backdrop-blur-md"><span class="text-tertiary font-bold flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span>BUG AUDIT • QA COMMAND CENTER &amp; CRITICAL DEFECT TRIAGE</span><div class="flex items-center gap-2"><span class="px-3 py-1 rounded-full bg-tertiary/20 text-tertiary border border-tertiary/30 font-bold uppercase">P0 CRITICAL / P1 HIGH</span><span class="px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-code-tag hidden sm:inline-block border border-outline-variant/30">PASS RATE: 98.4%</span></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-auto"><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-error">error</span>Critical P0 Triage</span><span class="text-error text-code-tag font-bold">NullPointer Fix</span></div><p class="text-outline text-body-sm font-body-md">In-depth investigation of stack traces on checkout submission and resolution of null pointer exceptions.</p></div><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-secondary">sync_problem</span>API 500 &amp; Cart Sync</span><span class="text-secondary text-code-tag font-bold">Investigating</span></div><p class="text-outline text-body-sm font-body-md">Cart synchronization edge-case isolation, HTTP 200/500 payload review, and regression verification.</p></div><div class="p-4 rounded-xl bg-surface-container-low/80 backdrop-blur-md border border-outline-variant/30 flex flex-col gap-2"><div class="flex items-center justify-between"><span class="text-on-surface font-bold text-body-sm uppercase flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">devices</span>Layout 375px &amp; Safari</span><span class="text-primary text-code-tag font-bold">Resolved</span></div><p class="text-outline text-body-sm font-body-md">Fixing viewport overflow bugs on 375px mobile screens and inactive CTA buttons on Safari WebKit.</p></div></div><div class="border-t border-outline-variant/30 pt-4 flex flex-col gap-1 pointer-events-none"><span class="font-code-tag text-code-tag text-tertiary uppercase tracking-widest font-semibold">QA TESTING • ISSUE MANAGEMENT &amp; DEFECT TRIAGE</span><h4 class="font-headline-md text-headline-sm md:text-headline-md uppercase text-on-surface font-bold drop-shadow-md">DEFECT TRIAGE &amp; ISSUE TRACKING BENCHMARK</h4><p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl line-clamp-1">Comprehensive bug reporting workflow with severity tracking (Critical, Major, Minor), root cause analysis, and cross-browser visual verification.</p></div></div></div>
+<button aria-label="Previous project" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-low/75 backdrop-blur-xl border border-outline-variant/40 text-on-surface hover:text-tertiary hover:bg-surface-container hover:scale-110 flex items-center justify-center transition-all shadow-xl z-20" onclick="slidePole('qa', -1)">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<button aria-label="Next project" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-surface-container-low/75 backdrop-blur-xl border border-outline-variant/40 text-on-surface hover:text-tertiary hover:bg-surface-container hover:scale-110 flex items-center justify-center transition-all shadow-xl z-20" onclick="slidePole('qa', 1)">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. SECTION WORK TOGETHER -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin pt-16 pb-32" id="contact">
+<div class="bg-surface-container-low/90 border border-outline-variant/30 rounded-3xl p-6 md:p-12 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<div class="lg:col-span-5 flex flex-col">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-code-tag text-code-tag uppercase tracking-widest text-secondary font-bold">CONTACT</span>
+</div>
+<h2 class="text-4xl md:text-5xl font-headline-lg font-bold uppercase tracking-tight text-on-surface leading-tight mb-6">LET'S BUILD SOMETHING<br/><span class="text-primary">EXCEPTIONAL TOGETHER</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-8">Looking for an opportunity in UI/UX Design, Graphic Design, or QA Testing? Let's discuss your project, product team needs, or freelance collaboration.</p>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container border border-outline-variant/30">
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-tag text-code-tag uppercase tracking-wider text-outline">Email</span>
+<a class="font-body-md text-body-md font-semibold text-on-surface hover:text-primary transition-colors" href="mailto:samiraneki9@gmail.com">samiraneki9@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container border border-outline-variant/30">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-tag text-code-tag uppercase tracking-wider text-outline">Location</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Algeria • Open to Remote Worldwide</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-surface-container border border-outline-variant/30">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">share</span>
+</div>
+<div class="flex flex-col">
+<span class="font-code-tag text-code-tag uppercase tracking-wider text-outline">Social Networks</span>
+<div class="flex items-center gap-3 pt-1">
+<a class="font-code-tag text-code-tag font-semibold text-on-surface hover:text-primary transition-colors" href="https://www.linkedin.com/in/samira-neki-263ab1438/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<span class="text-outline/40">•</span>
+<a class="font-code-tag text-code-tag font-semibold text-on-surface hover:text-secondary transition-colors" href="https://www.behance.net/samiraneki1"rel="noopener noreferrer" target="_blank">Behance</a>
+<span class="text-outline/40">•</span>
+<a class="font-code-tag text-code-tag font-semibold text-on-surface hover:text-tertiary transition-colors" href="https://github.com/samiraneki9"rel="noopener noreferrer" target="_blank">GitHub</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface-container rounded-2xl p-6 md:p-8 border border-outline-variant/30 shadow-xl flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<span class="font-code-tag text-code-tag uppercase tracking-wider text-outline font-bold">I AM INTERESTED IN :</span>
+<div class="flex flex-wrap gap-2 pt-1" id="service-selector">
+<button class="service-pill px-4 py-1.5 rounded-full bg-primary text-on-primary font-code-tag text-code-tag uppercase tracking-wider font-bold shadow-md transition-all" type="button">Full-time Opportunity</button>
+<button class="service-pill px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-code-tag text-code-tag uppercase tracking-wider font-semibold transition-all" type="button">UI/UX Project</button>
+<button class="service-pill px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-code-tag text-code-tag uppercase tracking-wider font-semibold transition-all" type="button">Graphic Design Project</button>
+<button class="service-pill px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-code-tag text-code-tag uppercase tracking-wider font-semibold transition-all" type="button">QA / Testing Mission</button>
+<button class="service-pill px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-code-tag text-code-tag uppercase tracking-wider font-semibold transition-all" type="button">Other</button>
+</div>
+</div>
+<form class="flex flex-col gap-4" id="contact-form" onsubmit="event.preventDefault(); document.getElementById('confirmation-msg').classList.remove('hidden');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-code-tag text-code-tag text-outline uppercase tracking-wider">Your Name</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline" placeholder="Your name" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-code-tag text-code-tag text-outline uppercase tracking-wider">Your Email</label>
+<input class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline" placeholder="your@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-code-tag text-code-tag text-outline uppercase tracking-wider">Your Message</label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline resize-none" placeholder="Tell me about your project or opportunity..." required="" rows="4"></textarea>
+</div>
+<button class="w-full py-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest font-bold shadow-xl hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center justify-center gap-2 group" type="submit">
+<span class="">Send Message</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="hidden p-4 rounded-xl bg-surface-container-highest text-secondary font-code-tag text-code-tag uppercase tracking-wider flex items-center gap-2" id="confirmation-msg">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="">Message sent successfully. I will get back to you shortly!</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div></main>
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30 text-on-surface-variant py-12">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-outline-variant/20">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="font-headline-sm text-headline-sm uppercase font-bold text-on-surface tracking-tight">SAMIRA NEKI</span>
+<span class="font-code-tag text-code-tag text-secondary uppercase tracking-widest">UI/UX Designer · Graphic Designer · QA Tester</span>
+</div>
+<nav class="flex flex-wrap items-center justify-center gap-6">
+<a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors" href="#a-propos">About</a>
+<a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors" href="#expertises">Expertise</a>
+<a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors" href="#realisations">Projects</a>
+<a class="font-code-tag text-code-tag uppercase tracking-wider text-on-surface-variant hover:text-tertiary transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<a class="hover:text-primary transition-colors font-code-tag text-code-tag uppercase" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<span class="text-outline/40">•</span>
+<a class="hover:text-secondary transition-colors font-code-tag text-code-tag uppercase" href="https://behance.net" rel="noopener noreferrer" target="_blank">Behance</a>
+<span class="text-outline/40">•</span>
+<a class="hover:text-tertiary transition-colors font-code-tag text-code-tag uppercase" href="mailto:samiraneki9@gmail.com">Email</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-outline font-code-tag text-code-tag">
+<p class="">© 2026 Samira Neki. All rights reserved. Crafted with precision &amp; tested with passion.</p>
+</div>
+</div>
+</footer>
+<script>
+  // Service Pills switching
+  document.querySelectorAll('.service-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.service-pill').forEach(b => {
+        b.className = 'service-pill px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-code-tag text-code-tag uppercase tracking-wider font-semibold transition-all';
+      });
+      btn.className = 'service-pill px-4 py-1.5 rounded-full bg-primary text-on-primary font-code-tag text-code-tag uppercase tracking-wider font-bold shadow-md transition-all';
+    });
+  });
+
+  // Automated 3-Pole Hero Slideshows Engine
+  const poleSliders = {
+    uiux: {
+      current: 0,
+      total: 3,
+      colorClass: 'bg-primary',
+      activeWidth: 'w-8',
+      timer: null
+    },
+    graphic: {
+      current: 0,
+      total: 5,
+      colorClass: 'bg-secondary',
+      activeWidth: 'w-8',
+      timer: null
+    },
+    qa: {
+      current: 3,
+      total: 4,
+      colorClass: 'bg-tertiary',
+      activeWidth: 'w-8',
+      timer: null
+    }
+  };
+
+  function updateSlideView(poleKey) {
+    const data = poleSliders[poleKey];
+    const container = document.getElementById('container-' + poleKey);
+    if (!container) return;
+
+    const slides = container.querySelectorAll('[data-slide-index]');
+    slides.forEach((slide, idx) => {
+      if (idx === data.current) {
+        slide.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'z-0');
+        slide.classList.add('opacity-100', 'scale-100', 'pointer-events-auto', 'z-10');
+      } else {
+        slide.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto', 'z-10');
+        slide.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'z-0');
+      }
+    });
+
+    const counter = document.getElementById('counter-' + poleKey);
+    if (counter) {
+      counter.textContent = `${String(data.current + 1).padStart(2, '0')} / ${String(data.total).padStart(2, '0')}`;
+    }
+
+    const dotsContainer = document.getElementById('dots-' + poleKey);
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll('button');
+      dots.forEach((dot, idx) => {
+        if (idx === data.current) {
+          dot.className = `h-2.5 rounded-full transition-all duration-300 ${data.colorClass} ${data.activeWidth}`;
+        } else {
+          dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 bg-surface-container-highest hover:bg-outline';
+        }
+      });
+    }
+  }
+
+  function slidePole(poleKey, direction) {
+    const data = poleSliders[poleKey];
+    if (!data) return;
+    data.current = (data.current + direction + data.total) % data.total;
+    updateSlideView(poleKey);
+  }
+
+  function goToSlide(poleKey, targetIndex) {
+    const data = poleSliders[poleKey];
+    if (!data) return;
+    data.current = targetIndex % data.total;
+    updateSlideView(poleKey);
+  }
+
+  function startAutoCycle(poleKey) {
+    if (poleSliders[poleKey].timer) clearInterval(poleSliders[poleKey].timer);
+    poleSliders[poleKey].timer = setInterval(() => {
+      slidePole(poleKey, 1);
+    }, 5000);
+  }
+
+  function stopAutoCycle(poleKey) {
+    if (poleSliders[poleKey].timer) {
+      clearInterval(poleSliders[poleKey].timer);
+      poleSliders[poleKey].timer = null;
+    }
+  }
+
+  ['uiux', 'graphic', 'qa'].forEach(pole => {
+    updateSlideView(pole);
+    startAutoCycle(pole);
+
+    const cont = document.getElementById('container-' + pole);
+    if (cont) {
+      cont.addEventListener('mouseenter', () => stopAutoCycle(pole));
+      cont.addEventListener('mouseleave', () => startAutoCycle(pole));
+    }
+  });
+</script>
+</body>
+</html>
