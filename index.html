@@ -712,20 +712,23 @@
 <button class="service-pill px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-code-tag text-code-tag uppercase tracking-wider font-semibold transition-all" type="button">Other</button>
 </div>
 </div>
-<form class="flex flex-col gap-4" id="contact-form" onsubmit="event.preventDefault(); document.getElementById('confirmation-msg').classList.remove('hidden');">
+<form class="flex flex-col gap-4" id="contact-form" action="https://formsubmit.co/ajax/samiraneki9@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Nouveau message depuis mon portfolio">
+<input type="hidden" name="_template" value="basic">
+<input type="hidden" name="project_type" id="project-type" value="">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div class="flex flex-col gap-1.5">
 <label class="font-code-tag text-code-tag text-outline uppercase tracking-wider">Your Name</label>
-<input class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline" placeholder="Your name" required="" type="text"/>
+<input class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline" placeholder="Your name" name="name" required="" type="text"/>
 </div>
 <div class="flex flex-col gap-1.5">
 <label class="font-code-tag text-code-tag text-outline uppercase tracking-wider">Your Email</label>
-<input class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline" placeholder="your@email.com" required="" type="email"/>
+<input class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline" placeholder="your@email.com" name="email" required="" type="email"/>
 </div>
 </div>
 <div class="flex flex-col gap-1.5">
 <label class="font-code-tag text-code-tag text-outline uppercase tracking-wider">Your Message</label>
-<textarea class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline resize-none" placeholder="Tell me about your project or opportunity..." required="" rows="4"></textarea>
+<textarea class="w-full bg-surface-container-lowest text-on-surface px-4 py-3 rounded-xl border border-outline-variant/30 outline-none focus:ring-1 focus:ring-primary font-body-sm text-body-sm placeholder:text-outline resize-none" placeholder="Tell me about your project or opportunity..." name="message" required="" rows="4"></textarea>
 </div>
 <button class="w-full py-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest font-bold shadow-xl hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center justify-center gap-2 group" type="submit">
 <span class="">Send Message</span>
@@ -769,13 +772,24 @@
 </div>
 </footer>
 <script>
-  // Service Pills switching
-  document.querySelectorAll('.service-pill').forEach(btn => {
+ 
+ // Service Pills switching
+  const serviceButtons = document.querySelectorAll('.service-pill');
+  const projectTypeInput = document.getElementById('project-type');
+
+  serviceButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.service-pill').forEach(b => {
+      // Conserver l'apparence actuelle des boutons
+      serviceButtons.forEach(b => {
         b.className = 'service-pill px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant hover:text-on-surface font-code-tag text-code-tag uppercase tracking-wider font-semibold transition-all';
       });
+
       btn.className = 'service-pill px-4 py-1.5 rounded-full bg-primary text-on-primary font-code-tag text-code-tag uppercase tracking-wider font-bold shadow-md transition-all';
+
+      // Enregistrer le choix du client pour l'e-mail
+      if (projectTypeInput) {
+        projectTypeInput.value = btn.textContent.trim();
+      }
     });
   });
 
@@ -876,6 +890,52 @@
       cont.addEventListener('mouseleave', () => startAutoCycle(pole));
     }
   });
+</script>
+
+<script>
+const contactForm = document.getElementById('contact-form');
+const confirmationMsg = document.getElementById('confirmation-msg');
+
+contactForm.addEventListener('submit', async function (event) {
+  event.preventDefault();
+
+  const button = contactForm.querySelector('button[type="submit"]');
+  const buttonText = button.querySelector('span');
+  const originalText = buttonText.textContent;
+
+  buttonText.textContent = 'Sending...';
+  button.disabled = true;
+  confirmationMsg.classList.add('hidden');
+
+  try {
+    const formData = Object.fromEntries(new FormData(contactForm));
+
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || result.success === false ||
+        result.success === 'false') {
+      throw new Error('Envoi échoué');
+    }
+
+    confirmationMsg.classList.remove('hidden');
+    contactForm.reset();
+
+  } catch (error) {
+    alert('Envoi impossible. Veuillez réessayer.');
+  } finally {
+    buttonText.textContent = originalText;
+    button.disabled = false;
+  }
+});
 </script>
 </body>
 </html>
